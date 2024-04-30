@@ -1,29 +1,29 @@
 Name: container-tools
 Version: 1
-Release: 12%{?dist}
+Release: 14%{?dist}
 Summary: A meta-package witch container tools such as podman, buildah, skopeo, etc.
 License: MIT
 BuildArch: noarch
-Requires: aardvark-dns
-Requires: buildah
+Requires: aardvark-dns >= 2:1.9.0-1
+Requires: buildah >= 1:1.33.2-1
 Requires: conmon
 Requires: (container-selinux >= 2:2.162.1 if selinux-policy)
 Requires: containernetworking-plugins
 Requires: containers-common
 Requires: fuse-overlayfs
-Requires: netavark
-Requires: podman
+Requires: netavark >= 2:1.9.0-1
+Requires: podman >= 2:4.8.1-1
 Requires: podman-docker
 Requires: podman-manpages
 Requires: podman-remote
-Requires: python3-podman
+Requires: python3-podman >= 3:4.8.0.post1-1
 Requires: oci-runtime
 %if 0%{?rhel} >= 9 || 0%{?fedora}
 Requires: crun >= 0.19
 %else
 Requires: runc
 %endif
-Requires: skopeo
+Requires: skopeo >= 2:1.14.0-1
 Requires: slirp4netns
 Requires: cockpit-podman
 Requires: toolbox
@@ -57,6 +57,16 @@ This package contains system tests for %{name}.
 %files tests
 
 %changelog
+* Wed Dec 06 2023 Lokesh Mandvekar <lsm5@redhat.com> - 1-14
+- rebuild with updated dependencies:
+  [python-]podman 4.8.0, buildah 1.33.2, skopeo 1.14.0,
+  aardvark-dns and netavark 1.9.0
+- Related: Jira:RHEL-2112
+
+* Tue Oct 10 2023 Jindrich Novy <jnovy@redhat.com> - 1-13
+- rebuild
+- Related: Jira:RHEL-2112
+
 * Thu Jun 30 2022 Jindrich Novy <jnovy@redhat.com> - 1-12
 - remove direct podman/buildah/skopeo minimal verison dependencies
 - Related: #2061316
