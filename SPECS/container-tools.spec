@@ -1,6 +1,6 @@
 Name: container-tools
 Version: 1
-Release: 15%{?dist}
+Release: 16%{?dist}
 Summary: A meta-package witch container tools such as podman, buildah, skopeo, etc.
 License: MIT
 BuildArch: noarch
@@ -50,9 +50,13 @@ This package contains system tests for %{name}.
 %files tests
 
 %changelog
-* Fri Jun 20 2025 Jindrich Novy <jnovy@redhat.com> - 1-15
+* Mon May 19 2025 Jindrich Novy <jnovy@redhat.com> - 1-16
 - amend dependencies for RHEL10
-- Resolves: RHEL-97597
+- Resolves: RHEL-92028
+
+* Fri May 16 2025 Jindrich Novy <jnovy@redhat.com> - 1-15
+- build for RHEL10
+- Resolves: RHEL-92028
 
 * Wed Dec 06 2023 Lokesh Mandvekar <lsm5@redhat.com> - 1-14
 - rebuild with updated dependencies:
