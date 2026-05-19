@@ -1,7 +1,7 @@
 Name: container-tools
 Version: 1
-Release: 16%{?dist}
-Summary: A meta-package witch container tools such as podman, buildah, skopeo, etc.
+Release: 17%{?dist}
+Summary: A meta-package with container tools such as podman, buildah, skopeo, etc.
 License: MIT
 BuildArch: noarch
 Requires: aardvark-dns >= 2:1.9.0-1
@@ -50,6 +50,10 @@ This package contains system tests for %{name}.
 %files tests
 
 %changelog
+* Mon Oct 27 2025 Jindrich Novy <jnovy@redhat.com> - 1-17
+- Fix typo in the Summary
+- Resolves: RHEL-122178
+
 * Mon May 19 2025 Jindrich Novy <jnovy@redhat.com> - 1-16
 - amend dependencies for RHEL10
 - Resolves: RHEL-92028
